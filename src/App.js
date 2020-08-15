@@ -56,7 +56,9 @@ export default class App extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <ProgressBarSalary />
+                        <div className="col m12">
+                            <ProgressBarSalary />
+                        </div>
                     </div>
                 </div>            
                 );

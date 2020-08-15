@@ -1,0 +1,23 @@
+.progressBar {
+  background-color: #16a085;
+  height: 20px;
+  width: 100%;
+}
+
+.discountIRPF {
+  background-color: #c0392b;
+  height: 20px;
+  width: 10%;
+  float: left;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.discountINSS {
+  background-color: #e67e22;
+  height: 20px;
+  width: 70%;
+  float: left;
+  text-align: center;
+  font-size: 0.8em;
+}
