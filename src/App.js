@@ -24,11 +24,17 @@ export default class App extends Component {
     }
 
     handleCalculateSalary = (event) => {
+        let discountINSSPercent = 0;
+        let discountIRPFPercent = 0;
+        let netSalaryPercent = 0; 
+
         let salary = parseFloat(event.target.value);
         const fullSalaryCalculated =  calculateSalaryFrom(salary);
-        const discountINSSPercent = Math.round((fullSalaryCalculated.discountINSS/salary)*10000)/100;
-        const discountIRPFPercent = Math.round((fullSalaryCalculated.discountIRPF/salary)*10000)/100;
-        const netSalaryPercent = Math.round((fullSalaryCalculated.netSalary/salary)*10000)/100;
+        if (salary > 0) {
+            discountINSSPercent = Math.round((fullSalaryCalculated.discountINSS/salary)*10000)/100;
+            discountIRPFPercent = Math.round((fullSalaryCalculated.discountIRPF/salary)*10000)/100;
+            netSalaryPercent = Math.round((fullSalaryCalculated.netSalary/salary)*10000)/100;
+        }
 
         this.setState({
             fullSalary: fullSalaryCalculated,
@@ -58,7 +64,7 @@ export default class App extends Component {
                         </div>
                         <div className="col m3">
                             <label>Desconto INSS:</label>
-                            <InputReadOnly value={`${discountINSS} (${discountINSSPercent})%`} />
+                            <InputReadOnly value={`${discountINSS} (${discountINSSPercent})%`} colorText="#e67e22"/>
                         </div>
                         <div className="col m3">
                             <label>Base IRPF:</label>
@@ -66,18 +72,18 @@ export default class App extends Component {
                         </div>
                         <div className="col m3">
                             <label>Desconto IRPF:</label>
-                            <InputReadOnly value={`${discountIRPF} (${discountIRPFPercent})%`}/>
+                            <InputReadOnly value={`${discountIRPF} (${discountIRPFPercent})%`} colorText="#c0392b"/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col m4">
                             <label>Salário líquido:</label>
-                            <InputReadOnly value={`${netSalary} (${netSalaryPercent})%`}/>
+                            <InputReadOnly value={`${netSalary} (${netSalaryPercent})%`} colorText="#16a085"/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col m12">
-                            <ProgressBarSalary />
+                            <ProgressBarSalary discountINSS={discountINSSPercent} discountIRPF={discountIRPFPercent}/>
                         </div>
                     </div>
                 </div>            
