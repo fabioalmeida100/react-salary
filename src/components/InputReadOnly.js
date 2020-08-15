@@ -5,7 +5,7 @@ export default class InputReadOnly extends Component {
     const { value } = this.props;
     return (
       <div>
-          <input type="number" value={value} readOnly/>
+          <input type="text" value={value} readOnly/>
       </div>
     )
   }

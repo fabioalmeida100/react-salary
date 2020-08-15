@@ -3,11 +3,11 @@ import css from "./inputFullSalary.module.css"
 
 export default class InputFullSalary extends Component {
   render() {
+    const { onChangeValue } = this.props;
     return (
       <div className={css.mt10}>
           <label>Salário bruto</label>
-          <input type="number" name="" id=""/> 
-              
+          <input type="number" onChange={onChangeValue}/>              
       </div>
     )
   }
