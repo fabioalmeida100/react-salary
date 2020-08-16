@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import css from "./app.module.css";
-import InputFullSalary from './components/InputFullSalary';
-import InputReadOnly from './components/InputReadOnly';
-import ProgressBarSalary from './components/ProgressBarSalary';
+import InputFullSalary from './components/input-fullsalary/InputFullSalary';
+import InputReadOnly from './components/input-readonly/InputReadOnly';
+import ProgressBarSalary from './components/input-progressbar/ProgressBarSalary';
 import { calculateSalaryFrom } from "./helpers/salary";
 import { formatNumber } from "./helpers/formatHelpers"
 
