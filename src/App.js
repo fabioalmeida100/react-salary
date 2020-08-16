@@ -4,6 +4,7 @@ import InputFullSalary from './components/InputFullSalary';
 import InputReadOnly from './components/InputReadOnly';
 import ProgressBarSalary from './components/ProgressBarSalary';
 import { calculateSalaryFrom } from "./helpers/salary";
+import { formatNumber } from "./helpers/formatHelpers"
 
 export default class App extends Component {
     constructor() {
@@ -60,25 +61,25 @@ export default class App extends Component {
                     <div className="row">
                         <div className="col m3">
                             <label>Base INSS:</label>
-                            <InputReadOnly value={baseINSS}/>
+                            <InputReadOnly value={formatNumber(baseINSS)}/>
                         </div>
                         <div className="col m3">
                             <label>Desconto INSS:</label>
-                            <InputReadOnly value={`${discountINSS} (${discountINSSPercent})%`} colorText="#e67e22"/>
+                            <InputReadOnly value={`${formatNumber(discountINSS)} (${discountINSSPercent})%`} colorText="#e67e22"/>
                         </div>
                         <div className="col m3">
                             <label>Base IRPF:</label>
-                            <InputReadOnly value={baseIRPF}/>
+                            <InputReadOnly value={formatNumber(baseIRPF)}/>
                         </div>
                         <div className="col m3">
                             <label>Desconto IRPF:</label>
-                            <InputReadOnly value={`${discountIRPF} (${discountIRPFPercent})%`} colorText="#c0392b"/>
+                            <InputReadOnly value={`${formatNumber(discountIRPF)} (${discountIRPFPercent})%`} colorText="#c0392b"/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col m4">
                             <label>Salário líquido:</label>
-                            <InputReadOnly value={`${netSalary} (${netSalaryPercent})%`} colorText="#16a085"/>
+                            <InputReadOnly value={`${formatNumber(netSalary)} (${netSalaryPercent})%`} colorText="#16a085"/>
                         </div>
                     </div>
                     <div className="row">
